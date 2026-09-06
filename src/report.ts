@@ -40,7 +40,7 @@ export class Report<TReportOptions extends ReportOptions, TBenchOptions extends 
   /** Runs and waits for any benchmarks that have not been started. */
   async run(): Promise<void> {
     for (const { bench } of this.benches) {
-      if (bench.results.some((res) => res.state === "not-started")) await bench.run();
+      if (bench.results?.some((res) => res.state === "not-started")) await bench.run();
     }
   }
 
