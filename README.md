@@ -13,6 +13,8 @@ bun  add @aklinker1/tinybench-report
 deno add @aklinker1/tinybench-report
 ```
 
+[Example Report &rarr;](https://github.com/aklinker1/tinybench-report/blob/main/scripts/out/example.md)
+
 ## Features
 
 - Markdown report
