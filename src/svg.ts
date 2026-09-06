@@ -1,7 +1,12 @@
+/**
+ * Generate SVG charts.
+ *
+ * @module
+ */
 import type { Bench, TaskResultCompleted } from "tinybench";
 
 import type { BenchMetric, MetricBetter } from "./report";
-import { arrayify, formatNumber, getResultValue, METRIC_LABELS, WHATS_BETTER } from "./utils";
+import { arrayify, formatMetric, getResultValue, METRIC_LABELS, WHATS_BETTER } from "./utils";
 
 export type SvgColors = {
   base: `#${string}`;
@@ -18,13 +23,42 @@ const DEFAULT_COLORS: SvgColors = {
 };
 
 export type RenderSvgOptions = {
+  /** What to plot. */
   metric: BenchMetric;
+  /**
+   * If the metric is "better" for lower or higher values
+   *
+   * Default: Varies based on metric.
+   */
   better?: MetricBetter;
+  /** Bold one or more task names */
   highlightNames?: string | string[];
+  /** Override the theme */
   colors?: SvgColors;
+  /**
+   * The total width of the chart
+   *
+   * @default 640
+   */
   width?: number;
+  /**
+   * Border padding around the chart
+   *
+   * @default 16
+   */
   padding?: number;
+  /**
+   * Width of the label section. This is hardcoded by default, so if there's too much or not enough
+   * space, change this value.
+   *
+   * @default 64
+   */
   labelWidth?: number;
+  /**
+   * Spacing between elements
+   *
+   * @default 8
+   */
   gap?: number;
 };
 
@@ -52,17 +86,15 @@ export function renderSvg(bench: Bench, options: RenderSvgOptions): string {
   const barSize = 32;
   const axisWidth = 1;
   const titleSize = 24;
-  const titleMarginBottom = 8;
   const subtitleSize = 16;
   const labelSize = 12;
   const chartHeight = (items.length + 1) * gap + items.length * barSize;
-  const height =
-    2 * padding + titleSize + titleMarginBottom + subtitleSize + gap + axisWidth + chartHeight;
+  const height = 2 * padding + titleSize + gap + subtitleSize + gap + axisWidth + chartHeight;
   const labelThreshold = 0.3;
 
   const bounds = new Rectangle(0, 0, width, height);
   const title = bounds.copyPadded(padding).copyTopAligned(titleSize);
-  const subtitle = title.copyBelow(titleMarginBottom).copyBelow(subtitleSize);
+  const subtitle = title.copyBelow(gap).copyBelow(subtitleSize);
 
   const axisTop = subtitle.bottom + gap;
   const chartTop = axisTop + axisWidth;
@@ -126,7 +158,7 @@ export function renderSvg(bench: Bench, options: RenderSvgOptions): string {
       return (
         "  " +
         (isLeft ? l.copyLeftAligned(l.width - space) : l.copyRight(space).copyRight(0)).svgText(
-          formatNumber(items[i]!.value, options.metric),
+          formatMetric(items[i]!.value, options.metric),
           {
             fontSize: labelSize,
             color: isLeft ? colors.accentContent : colors.baseContent,

@@ -12,7 +12,7 @@ import {
   type FileWithContent,
   type ReportOptions,
 } from "./report";
-import { renderSvg, type SvgColors } from "./svg";
+import { renderSvg, RenderSvgOptions, type SvgColors } from "./svg";
 import { arrayify, METRIC_LABELS } from "./utils";
 
 export type MarkdownReportOptions = ReportOptions & {
@@ -28,13 +28,13 @@ export type MarkdownReportOptions = ReportOptions & {
    * @default true
    */
   frontmatter?: boolean;
-  svg?: {
-    colors?: SvgColors;
-  };
+  /** Options passed into `generateSvg` */
+  svg?: Omit<RenderSvgOptions, "metric">;
 };
 
 export type MarkdownBenchOptions = BenchOptions & {};
 
+/** Generate a MD file and SVG chart for each bench/metric requested. */
 export class MarkdownReport extends Report<MarkdownReportOptions, MarkdownBenchOptions> {
   render(): FileWithContent[] {
     const mdFile = this.options?.file ?? "benchmarks.md";

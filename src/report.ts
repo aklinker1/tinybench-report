@@ -34,10 +34,12 @@ export class Report<TReportOptions extends ReportOptions, TBenchOptions extends 
 
   constructor(protected options?: TReportOptions) {}
 
+  /** Add a benchmark to the report */
   add(bench: Bench, options?: TBenchOptions): void {
     this.benches.push({ bench, options });
   }
 
+  /** Runs and waits for any benchmarks that have not been started. */
   async run(): Promise<void> {
     for (const { bench } of this.benches) {
       if (bench.results.some((res) => res.state === "not-started")) await bench.run();

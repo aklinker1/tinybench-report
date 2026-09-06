@@ -1,8 +1,14 @@
+/**
+ * Utils for rendering and building reports.
+ *
+ * @module
+ */
 import type { TaskResultCompleted } from "tinybench";
 
-import type { BenchMetric } from "./report";
+import type { BenchMetric, MetricBetter } from "./report";
 
-export const WHATS_BETTER: Record<BenchMetric, "lower" | "higher"> = {
+/** Map of metrics to if lower or higher is better */
+export const WHATS_BETTER: Record<BenchMetric, MetricBetter> = {
   "latency-avg": "lower",
   "latency-med": "lower",
   "throughput-avg": "higher",
@@ -10,6 +16,7 @@ export const WHATS_BETTER: Record<BenchMetric, "lower" | "higher"> = {
   samples: "higher",
 };
 
+/** Map for metric to display text */
 export const METRIC_LABELS: Record<BenchMetric, string> = {
   "latency-avg": "Average latency",
   "latency-med": "Median latency",
@@ -18,6 +25,7 @@ export const METRIC_LABELS: Record<BenchMetric, string> = {
   samples: "Number of samples",
 };
 
+/** Get the value for a benchmark result given a metric. */
 export function getResultValue(res: TaskResultCompleted, metric: BenchMetric): number {
   if (metric === "latency-avg") return res.latency.mean;
   if (metric === "latency-med") return res.latency.p50;
@@ -28,7 +36,7 @@ export function getResultValue(res: TaskResultCompleted, metric: BenchMetric): n
   throw Error(`Unknown metric: ${metric}`);
 }
 
-/** Returns the number in the form `XXX.YYYeN` */
+/** Returns the number in the form `XXX.YYYeN`. */
 export function siNumber(n: number): string {
   if (n === 0) return "0";
 
@@ -38,7 +46,7 @@ export function siNumber(n: number): string {
   return `${mantissa.toFixed(3)}e${exponent}`;
 }
 
-/** Adds commas to large numbers */
+/** Adds commas to large numbers. */
 export function prettyNumber(n: number): string {
   const str = n.toString();
   const [integer, decimal] = str.split(".") as [string, string | undefined];
@@ -46,7 +54,8 @@ export function prettyNumber(n: number): string {
   return decimal ? `${formatted}.${decimal}` : formatted;
 }
 
-export function formatNumber(n: number, metric: BenchMetric): string {
+/** Formats a value in an easy to read format given the type of metric. */
+export function formatMetric(n: number, metric: BenchMetric): string {
   switch (metric) {
     case "latency-avg":
     case "latency-med":
@@ -77,6 +86,7 @@ export function formatNumber(n: number, metric: BenchMetric): string {
   }
 }
 
+/** Convert a value or array of values to an array. */
 export function arrayify<T>(t: T | T[] | undefined): T[] {
   return t == null ? [] : Array.isArray(t) ? t : [t];
 }
