@@ -1,5 +1,18 @@
 # Changelog
 
+## v1.0.4
+
+[compare changes](https://github.com/aklinker1/tinybench-report/compare/v1.0.3...v1.0.4)
+
+### 🩹 Fixes
+
+- Remove duplicate, ignored option ([`13ac7a4`](https://github.com/aklinker1/tinybench-report/commit/13ac7a4a925b19fc3723a23fa338e464d4b8009d))
+
+### ❤️ Contributors
+
+- [@aklinker1](https://github.com/aklinker1)
+
+
 ## v1.0.3
 
 [compare changes](https://github.com/aklinker1/tinybench-report/compare/v1.0.2...v1.0.3)
@@ -16,7 +29,6 @@
 ### ❤️ Contributors
 
 - [@aklinker1](https://github.com/aklinker1)
-
 
 ## v1.0.2
 
