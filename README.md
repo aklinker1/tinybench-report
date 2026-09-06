@@ -32,7 +32,6 @@ import { Bench } from "tinybench";
 // 1. Create a report
 const report = new MarkdownReport();
 
-
 // 2. Add benchmarks to the report
 const bench1 = new Bench({ ... });
 report.add(bench1);
