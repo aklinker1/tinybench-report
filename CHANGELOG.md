@@ -1,5 +1,18 @@
 # Changelog
 
+## v1.0.5
+
+[compare changes](https://github.com/aklinker1/tinybench-report/compare/v1.0.4...v1.0.5)
+
+### 🩹 Fixes
+
+- Handle `undefined` `bench.results` ([`2e8e6af`](https://github.com/aklinker1/tinybench-report/commit/2e8e6af7015d0c0ba2036e651839ee54f6e4d2da))
+
+### ❤️ Contributors
+
+- [@aklinker1](https://github.com/aklinker1)
+
+
 ## v1.0.4
 
 [compare changes](https://github.com/aklinker1/tinybench-report/compare/v1.0.3...v1.0.4)
@@ -11,7 +24,6 @@
 ### ❤️ Contributors
 
 - [@aklinker1](https://github.com/aklinker1)
-
 
 ## v1.0.3
 
