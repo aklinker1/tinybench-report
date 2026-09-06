@@ -1,0 +1,14 @@
+{
+  "$schema": "https://jsr.io/schema/config-file.v1.json",
+  "name": "@aklinker1/tinybench-report",
+  "version": "1.0.0",
+  "exports": {
+    ".": "./src/index.ts",
+    "./utils": "./src/utils.ts",
+    "./svg": "./src/svg.ts"
+  },
+  "publish": {
+    "include": ["src", "README.md"],
+    "exclude": ["**/__tests__/**", "**/*.test.ts"]
+  }
+}
