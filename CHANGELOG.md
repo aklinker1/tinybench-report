@@ -1,5 +1,23 @@
 # Changelog
 
+## v1.0.3
+
+[compare changes](https://github.com/aklinker1/tinybench-report/compare/v1.0.2...v1.0.3)
+
+### 📖 Documentation
+
+- Link to example report ([`833ed67`](https://github.com/aklinker1/tinybench-report/commit/833ed670f7e47dfc9193600700672aca6441e36b))
+- Fix readme ([`6764f0a`](https://github.com/aklinker1/tinybench-report/commit/6764f0a92c33f534033fba05750a43ddf24733fe))
+
+### 🏡 Chore
+
+- Don't format changelog ([`80fdd5a`](https://github.com/aklinker1/tinybench-report/commit/80fdd5ad8eef32ecd4ccf8accf1d55c4609a0dfc))
+
+### ❤️ Contributors
+
+- [@aklinker1](https://github.com/aklinker1)
+
+
 ## v1.0.2
 
 [compare changes](https://github.com/aklinker1/tinybench-report/compare/v1.0.0...v1.0.2)
@@ -24,4 +42,3 @@
 ### ❤️ Contributors
 
 - [@aklinker1](https://github.com/aklinker1)
-
