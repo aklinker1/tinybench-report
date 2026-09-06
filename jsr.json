@@ -3,7 +3,7 @@
   "name": "@aklinker1/tinybench-report",
   "version": "1.0.0",
   "imports": {
-    "tinybench": "npm:tinybench@>=6"
+    "tinybench": "npm:tinybench@^6"
   },
   "exports": {
     ".": "./src/index.ts",

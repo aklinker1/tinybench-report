@@ -49,6 +49,6 @@
     "typescript": "^7"
   },
   "peerDependencies": {
-    "tinybench": ">=6"
+    "tinybench": "^6"
   }
 }
