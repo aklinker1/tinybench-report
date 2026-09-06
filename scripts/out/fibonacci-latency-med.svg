@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 209" font-family="sans-serif">
+  <rect x="0" y="0" width="700" height="209" fill="#ffffff" rounded="undefined" rx="undefined" ry="undefined"></rect>
+  <text x="16" y="40" dominant-baseline="auto" text-anchor="start" font-size="24" fill="#000000" font-weight="bold">Fibonacci</text>
+  <text x="16" y="64" dominant-baseline="auto" text-anchor="start" font-size="16" fill="#000000A0" font-weight="regular">Median latency, lower = better</text>
+  <rect x="96" y="80" width="588" height="1" fill="#000000" rounded="undefined" rx="undefined" ry="undefined"></rect>
+  <rect x="96" y="81" width="1" height="112" fill="#000000" rounded="undefined" rx="undefined" ry="undefined"></rect>
+  <text x="80" y="113" dominant-baseline="middle" text-anchor="end" font-size="12" fill="#000000" font-weight="regular">Recursive 🥇</text>
+  <text x="80" y="161" dominant-baseline="middle" text-anchor="end" font-size="12" fill="#000000" font-weight="regular">Iterative 🥈</text>
+  <rect x="113" y="97" width="33.82510551831818" height="32" fill="#0077b6" rounded="4" rx="4" ry="4"></rect>
+  <rect x="113" y="145" width="571" height="32" fill="#0077b6" rounded="4" rx="4" ry="4"></rect>
+  <text x="156.8251055183182" y="113" dominant-baseline="middle" text-anchor="start" font-size="12" fill="#000000" font-weight="bold">42.000 μs</text>
+  <text x="674" y="161" dominant-baseline="middle" text-anchor="end" font-size="12" fill="#ffffff" font-weight="bold">709.000 μs</text>
+</svg>

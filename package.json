@@ -1,0 +1,38 @@
+{
+  "name": "@aklinker1/tinybench-report",
+  "version": "1.0.0",
+  "description": "Generate custom reports and charts for tinybench results",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "default": "./dist/index.mjs"
+    },
+    "./utils": {
+      "types": "./dist/utils.d.mts",
+      "default": "./dist/utils.mjs"
+    },
+    "./svg": {
+      "types": "./dist/svg.d.mts",
+      "default": "./dist/svg.mjs"
+    }
+  },
+  "scripts": {
+    "check": "check",
+    "build": "tsdown src/{index,svg,utils}.ts",
+    "example:svg": "bun run --watch scripts/example-svg.ts",
+    "example:md": "bun run --watch scripts/example-md.ts"
+  },
+  "devDependencies": {
+    "@aklinker1/check": "^2.4.0",
+    "@types/bun": "1.4.1",
+    "oxfmt": "^0.66.0",
+    "oxlint": "^1.81.0",
+    "publint": "^0.3.24",
+    "tsdown": "^0.23.0",
+    "typescript": "^7"
+  },
+  "peerDependencies": {
+    "tinybench": ">=6"
+  }
+}
