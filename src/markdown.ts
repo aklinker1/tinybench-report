@@ -12,7 +12,7 @@ import {
   type FileWithContent,
   type ReportOptions,
 } from "./report";
-import { renderSvg, RenderSvgOptions, type SvgColors } from "./svg";
+import { renderSvg, type RenderSvgOptions } from "./svg";
 import { arrayify, METRIC_LABELS } from "./utils";
 
 export type MarkdownReportOptions = ReportOptions & {
