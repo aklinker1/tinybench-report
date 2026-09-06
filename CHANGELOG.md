@@ -1,5 +1,18 @@
 # Changelog
 
+## v1.0.6
+
+[compare changes](https://github.com/aklinker1/tinybench-report/compare/v1.0.5...v1.0.6)
+
+### 🩹 Fixes
+
+- Make `benches` public, handle `undefined` result ([`aeb71f8`](https://github.com/aklinker1/tinybench-report/commit/aeb71f832777606c24fc6240c700b7505b983df4))
+
+### ❤️ Contributors
+
+- [@aklinker1](https://github.com/aklinker1)
+
+
 ## v1.0.5
 
 [compare changes](https://github.com/aklinker1/tinybench-report/compare/v1.0.4...v1.0.5)
@@ -11,7 +24,6 @@
 ### ❤️ Contributors
 
 - [@aklinker1](https://github.com/aklinker1)
-
 
 ## v1.0.4
 
