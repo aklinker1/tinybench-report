@@ -2,6 +2,18 @@
   "name": "@aklinker1/tinybench-report",
   "version": "1.0.0",
   "description": "Generate custom reports and charts for tinybench results",
+  "homepage": "https://jsr.io/@aklinker1/tinybench-report",
+  "license": "MIT",
+  "author": {
+    "name": "Aaron Klinker",
+    "email": "aaronklinker1@gmail.com"
+  },
+  "repository": {
+    "url": "git+https://github.com/aklinker1/tinybench-report.git"
+  },
+  "files": [
+    "dist"
+  ],
   "type": "module",
   "exports": {
     ".": {
@@ -17,11 +29,15 @@
       "default": "./dist/svg.mjs"
     }
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "check": "check",
     "build": "tsdown src/{index,svg,utils}.ts",
     "example:svg": "bun run --watch scripts/example-svg.ts",
-    "example:md": "bun run --watch scripts/example-md.ts"
+    "example:md": "bun run --watch scripts/example-md.ts",
+    "prepack": "bun run build"
   },
   "devDependencies": {
     "@aklinker1/check": "^2.4.0",
