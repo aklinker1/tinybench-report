@@ -4,9 +4,7 @@ import type { Bench } from "tinybench";
 
 export type FileWithContent = { file: string; content: string };
 
-export type ReportOptions = {
-  highlightNames?: string | string[];
-};
+export type ReportOptions = {};
 
 export type BenchMetric =
   | "latency-avg"
