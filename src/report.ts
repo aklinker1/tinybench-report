@@ -28,7 +28,8 @@ export type BenchOptions = {
 };
 
 export class Report<TReportOptions extends ReportOptions, TBenchOptions extends BenchOptions> {
-  protected benches: Array<{ bench: Bench; options?: TBenchOptions }> = [];
+  /** Benches added to the report with their options. */
+  benches: Array<{ bench: Bench; options?: TBenchOptions }> = [];
 
   constructor(protected options?: TReportOptions) {}
 
@@ -40,7 +41,8 @@ export class Report<TReportOptions extends ReportOptions, TBenchOptions extends 
   /** Runs and waits for any benchmarks that have not been started. */
   async run(): Promise<void> {
     for (const { bench } of this.benches) {
-      if (bench.results?.some((res) => res.state === "not-started")) await bench.run();
+      if (bench.results?.some((res) => res == null || res.state === "not-started"))
+        await bench.run();
     }
   }
 
